@@ -103,4 +103,5 @@ public class WebConfig implements WebMvcConfigurer {
         properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         return properties;
     }
+
 }

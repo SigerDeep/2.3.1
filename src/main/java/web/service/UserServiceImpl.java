@@ -37,4 +37,5 @@ public class UserServiceImpl implements UserService{
     public void updateUserNameById(int id, User user) {
         userDAO.updateUserNameById(id, user);
     }
+
 }
