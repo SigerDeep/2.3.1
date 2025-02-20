@@ -9,7 +9,7 @@ import web.service.UserServiceImpl;
 
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserControler {
 
     @Autowired
@@ -21,31 +21,31 @@ public class UserControler {
         return "users";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public String getUser(@PathVariable int id, ModelMap model) {
         model.addAttribute("user", userService.getUserById(id));
         return "userPage";
     }
 
-    @GetMapping("/{id}/edit")
+    @GetMapping("{id}/edit")
     public String updateUser(@PathVariable int id, ModelMap model) {
         model.addAttribute("user", userService.getUserById(id));
         return "edit";
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable int id) {
         userService.updateUserNameById(id, user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     public String drop(@PathVariable int id) {
         userService.dropUserById(id);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
-    @GetMapping("/new")
+    @GetMapping("new")
     public String addUser(ModelMap model) {
         model.addAttribute("user", new User());
         return "new";
@@ -54,7 +54,8 @@ public class UserControler {
     @PostMapping()
     public String create(@ModelAttribute("user") User user) {
         userService.add(user);
-        return "redirect:/users";
+        return "redirect:/";
     }
+
 
 }

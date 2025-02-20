@@ -59,4 +59,5 @@ public class UserDAOImpl implements UserDAO {
         userForUpgrade.setEmail(updatedUser.getEmail());
         entityManager.getTransaction().commit();
     }
+
 }

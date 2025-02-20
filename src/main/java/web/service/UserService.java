@@ -10,4 +10,5 @@ public interface UserService {
     User getUserById(int id);
     void dropUserById(int id);
     void updateUserNameById(int id, User user);
+
 }

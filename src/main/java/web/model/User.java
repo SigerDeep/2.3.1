@@ -32,4 +32,5 @@ public class User {
     public String toString(){
         return String.valueOf(this.id) + ": " + this.name + " " + this.surname + " " + this.nickname + " " + this.email;
     }
+
 }
